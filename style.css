@@ -1,0 +1,79 @@
+/* Hide Default Cursor */
+html, body, a, button, input, textarea, .skill-card {
+    cursor: none !important;
+}
+
+/* Custom Cursor Styles */
+#custom-cursor {
+    transition: width 0.3s ease, height 0.3s ease, transform 0.1s ease-out;
+}
+
+/* Disable Custom Cursor on Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+    #custom-cursor {
+        display: none !important;
+    }
+    html, body, a, button, input, textarea, .skill-card {
+        cursor: auto !important;
+    }
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+    position: relative;
+    opacity: 0;
+    transition: all 1.2s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+}
+
+.reveal-left {
+    transform: translateX(-50px);
+}
+
+.reveal-right {
+    transform: translateX(50px);
+}
+
+.reveal.active.reveal-left,
+.reveal.active.reveal-right {
+    transform: translateX(0);
+}
+
+.reveal-up {
+    transform: translateY(50px);
+}
+
+.reveal.active.reveal-up {
+    transform: translateY(0);
+}
+
+/* Navbar Shadow */
+.navbar-shadow {
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.15);
+}
+
+/* Typewriter Animation Cursor */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+#typewriter::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+    margin-left: 2px;
+    color: #ef4444;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Skill Card Hover Effect (additional to Tailwind) */
+.skill-card:hover svg {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
