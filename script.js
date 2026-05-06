@@ -81,7 +81,7 @@ if (cursor) {
 }
 
 // Typewriter Animation
-const typewriterText = "I am Ashish Kumar";
+const typewriterText = "I'm Ashish Kumar";
 const typewriterElement = document.getElementById('typewriter');
 let i = 0;
 
@@ -126,3 +126,34 @@ function initHomeAnimation() {
         homeRight.style.transform = 'translateX(0)';
     }
 }
+
+// Security: Prevent Source Code Copying Deterrents
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+document.addEventListener('keydown', (e) => {
+    // Prevent F12
+    if (e.key === 'F12') {
+        e.preventDefault();
+    }
+    // Prevent Ctrl+U (View Source)
+    if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+    }
+    // Prevent Ctrl+Shift+I (Inspect)
+    if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+    }
+    // Prevent Ctrl+Shift+J (Console)
+    if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+    }
+    // Prevent Ctrl+S (Save Page)
+    if (e.ctrlKey && e.key === 's') {
+        e.preventDefault();
+    }
+});
+
+// Disable dragging of images
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('dragstart', (e) => e.preventDefault());
+});
