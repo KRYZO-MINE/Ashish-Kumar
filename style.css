@@ -67,6 +67,32 @@ html, body, a, button, input, textarea, .skill-card {
     color: #ef4444;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ef4444; /* Red color matching your theme */
+    border-radius: 10px;
+    border: 3px solid #f1f1f1; /* Creates a gap effect on the right */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #dc2626; /* Darker red on hover */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ef4444 #f1f1f1;
+}
+
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
